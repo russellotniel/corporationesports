@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<link rel="stylesheet" href="../css/styles.css" />
+		<title>Scrimage Registration</title>
+	</head>
+	<body>
+		<div class="registImg">
+			<img src="../img/logo2.png" alt="" />
+			<img src="../img/pubglogo.png" alt="" />
+		</div>
+		<div class="container1">
+			<div class="box">
+				<h1>Team Registration</h1>
+				<form name="registrationForm">
+					<div class="teamData">
+						<h2><span class="heading-underline">Team Data</span></h2>
+						<label for="teamName">Nama Team</label>
+						<input type="text" name="teamName" id="teamName" autofocus required />
+
+						<label for="teamPhoneNumber">No HP Leader</label>
+						<input type="text" name="teamPhoneNumber" id="teamPhoneNumber" required />
+					</div>
+
+					<div class="playersData">
+						<h2><span class="heading-underline">Players Data</span></h2>
+						<div class="playersData-grid">
+							<div>
+								<label for="player1Name">Player 1 IGN</label>
+								<input type="text" name="player1IGN" id="player1IGN" required />
+							</div>
+
+							<div>
+								<label for="player1Name">Player 2 IGN</label>
+								<input type="text" name="player2IGN" id="player2IGN" required />
+							</div>
+
+							<div>
+								<label for="player1Name">Player 3 IGN</label>
+								<input type="text" name="player3IGN" id="player3IGN" required />
+							</div>
+
+							<div>
+								<label for="player1Name">Player 4 IGN</label>
+								<input type="text" name="player4IGN" id="player4IGN" required />
+							</div>
+
+							<div>
+								<label for="player1Name">Player 5 IGN (Optional)</label>
+								<input type="text" name="player5IGN" id="player5IGN" />
+							</div>
+
+							<div>
+								<label for="player1Name">Player 6 IGN (Optional)</label>
+								<input type="text" name="player6IGN" id="player6IGN" />
+							</div>
+						</div>
+					</div>
+					<div class="alert alert-success alert-dismissible fade show myAlert d-none" role="alert">
+						<strong>Terima kasih!</strong> Tim kalian berhasil diregistrasi.
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+					<button type="submit" class="btn btn-outline-danger btnRegister">Register</button>
+					<div class="spinner-border d-none loading" role="status">
+						<span class="sr-only"></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+		<!-- Option 2: Separate Popper and Bootstrap JS -->
+		<!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+      -->
+
+		<script>
+			const scriptURL = "https://script.google.com/macros/s/AKfycbwE6IxWPlixN4l_deEUEE2vamFTCDfM2npIE_78LqwJf79Dv9H9eXFezJZ_fqvTCI4E/exec";
+			const form = document.forms["registrationForm"];
+			const btnRegister = document.querySelector(".btnRegister");
+			const loading = document.querySelector(".loading");
+			const myAlert = document.querySelector(".myAlert");
+
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				//Loading muncul, submit ilang
+				loading.classList.toggle("d-none");
+				btnRegister.classList.toggle("d-none");
+				fetch(scriptURL, { method: "POST", body: new FormData(form) })
+					.then((response) => {
+						// Loading ilang, submit muncul
+						loading.classList.toggle("d-none");
+						btnRegister.classList.toggle("d-none");
+						// Alert muncul
+						myAlert.classList.toggle("d-none");
+						//Reset Form
+						form.reset();
+						console.log("Success!", response);
+					})
+					.catch((error) => console.error("Error!", error.message));
+			});
+		</script>
+	</body>
+</html>
+
+<!-- 📑 REGISTRATION FORM 📑
+THE CORPORATION PRIVATE SCRIM
+———
+1. Nama Team : 
+2. No Telepon WA Leader : 
+3. Sesi (Pilih satu) : 19.30 WIB
+———
+Data Player Nick Game + No ID
+1. Player 1  :
+2. Player 2 :
+3. Player 3 :
+4. Player 4 :
+5. Player 5 :
+6. Player 6 :
+———
+Payment Registrasi : IDR 15.000 / Slot
+———
+Payment:
+💳 BCA 2880237503 A/N BRYAN J
+💳 OVO / DANA / GOPAY 081311556518 A/N BRYAN J
+———
+*KIRIM BUKTI PEMBAYARAN -->
+
+<!-- https://script.google.com/macros/s/AKfycbwE6IxWPlixN4l_deEUEE2vamFTCDfM2npIE_78LqwJf79Dv9H9eXFezJZ_fqvTCI4E/exec -->
