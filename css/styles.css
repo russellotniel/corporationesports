@@ -3,6 +3,10 @@
 	--dark-color: #141414;
 }
 
+html {
+	height: 100%;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -13,6 +17,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	background: #000;
 	color: white;
+	min-height: 100%;
 }
 
 ul {
@@ -28,346 +33,204 @@ img {
 	width: 100%;
 }
 
-.showcase {
-	height: 100vh;
-	width: 100%;
-	position: relative;
-	background: url(../img/background2.jpg) no-repeat center center/cover;
-}
-
-.showcase::after {
-	content: "";
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	background: rgba(0, 0, 0, 0.6);
-}
-
-.showcase-top {
-	height: 80px;
-	position: relative;
-	z-index: 2;
-}
-
-.showcase-top img {
-	width: 80px;
-	position: absolute;
-	top: 1%;
-	left: 5%;
-}
-
-.nav ul {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-	padding-top: 32px;
-	margin-left: 12%;
-	font-size: 1.2rem;
-}
-
-.nav ul li:last-child {
-	margin-left: auto;
-	margin-right: 5%;
-}
-
-.nav ul li:hover {
-	opacity: 0.6;
-}
-
-.showcase-content {
-	position: relative;
-	z-index: 2;
-	width: 50%;
-	margin-top: 12rem;
-	margin-left: 3rem;
-}
-
-.showcase-content h1 {
-	font-weight: 700;
-	font-size: 3rem;
-}
-
-#about-us {
-	background: whitesmoke;
-	padding-top: 6rem;
-	height: 70vh;
-	border-top: #999 solid 2px;
-}
-
-.container {
-	width: 70%;
-	margin: auto;
-	overflow: hidden;
-	padding: 0 2rem;
-}
-
-#about-us .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: black;
-}
-
-#about-us .container h2 {
-	font-size: 2.5rem;
-}
-
-.about-us-content {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: 3rem;
-	padding-top: 2rem;
-	line-height: 1.5;
-	font-size: 1.5rem;
-}
-
-#team {
-	background: rgba(245, 245, 245, 0.705);
-	height: 60vh;
-	padding-top: 2rem;
-	color: black;
-	padding-top: 5rem;
-}
-
-#team .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-#team h2 {
-	font-size: 2.5rem;
-}
-
-.members {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	grid-gap: 10rem;
-	margin: auto;
-	padding-top: 3rem;
-}
-
-.members > div i {
-	font-size: 10rem;
-	padding-bottom: 2rem;
-}
-
-.members > div h4 {
-	border: 1px solid black;
-	display: inline-block;
-	width: 100%;
-	padding: 0.3rem;
-}
-
 /* Registration */
-.container1 {
-	position: relative;
+.background {
 	width: 100%;
-	height: 120vh;
-	background: url(../img/background4.jpg) no-repeat center center/cover;
-	color: black;
-	font-family: "Montserrat", sans-serif;
-	font-size: 20px;
+	background-color: var(--primary-color);
+	background-image: -webkit-linear-gradient(120deg, var(--primary-color) 50%, whitesmoke 0%);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 5%;
 }
 
-.container1::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.35);
+.upper {
+	text-align: center;
 }
 
-.registImg {
-	position: absolute;
-	top: 1%;
-	left: 50%;
-	z-index: 2;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transform: translate(-50%, -1%);
+.upper img {
+	width: 120px;
 }
 
-.registImg img {
-	width: 140px;
-	padding-right: 20px;
-}
-
-.box {
-	position: relative;
-	z-index: 2;
-	background: rgba(245, 245, 245, 0.863);
+.boxForm {
+	width: 50%;
+	margin: auto;
+	margin-top: 30px;
+	background: rgba(226, 226, 226, 0.9);
 	border: #ccc solid 1px;
 	border-radius: 20px;
-	width: 50%;
-	margin: 0 auto;
-	transform: translateY(22%);
 	box-shadow: 20px 20px 50px 15px black;
+	padding: 2em;
+	color: var(--dark-color);
+	font-family: "Montserrat", sans-serif;
 }
 
-.box h1 {
+.boxForm h1 {
 	text-align: center;
-	padding-top: 20px;
-	text-transform: uppercase;
-	padding-bottom: 10px;
 }
 
 form {
-	position: relative;
 	margin: auto;
-	width: 90%;
+	width: 100%;
+	margin-left: 20%;
+	margin-top: 2%;
 }
 
 form label {
 	display: block;
+	padding: 0.5em 0;
 }
 
 form input {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	border-radius: 5px;
 	border: none;
 	padding: 5px 0 0 10px;
-	background-color: whitesmoke;
-}
-
-.teamData {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.teamData input {
-	display: block;
-	width: 70%;
-}
-
-.playersData {
-	margin: 20px 0;
-}
-
-.playersData-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.playersData-grid input {
-	width: 90%;
-}
-
-.btn {
-	display: inline-block;
-	background: var(--primary-color);
-	color: white;
-	padding: 0.7rem 1.2rem;
-	text-align: center;
-	border: none;
-	cursor: pointer;
-	outline: none;
-}
-
-.btn-rounded {
-	border-radius: 20px;
-}
-
-.nav ul li:last-child:hover {
-	opacity: 0.9;
+	width: 60%;
 }
 
 .heading-underline {
-	display: inline-block;
-	border-bottom: 2px solid black;
+	text-decoration: underline;
+}
+
+.formDiv {
+	position: relative;
+}
+
+.formDiv i {
+	position: absolute;
+	top: 46%;
+	right: 41%;
+	visibility: hidden;
+}
+
+.formDiv small {
+	visibility: hidden;
+	position: absolute;
+	top: 80%;
+	left: 0;
+}
+
+.formDiv.success input {
+	border: 2px solid #2ecc71;
+}
+
+.formDiv.success i.fa-check-circle {
+	visibility: visible;
+	color: #2ecc71;
+}
+
+.formDiv.error input {
+	border: 2px solid #e74c3c;
+}
+
+.formDiv.error i.fa-exclamation-circle {
+	visibility: visible;
+	color: #e74c3c;
+}
+
+.formDiv.error small {
+	visibility: visible;
+	color: #e74c3c;
+}
+
+.playersData {
+	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
-.btn-outline-danger {
-	margin-bottom: 20px;
-	font-size: 1.1em;
+.alert {
+	margin-top: 10px;
+	width: 60%;
 }
 
-@media (max-width: 800px) {
-	.container1 {
-		height: 150vh;
+.payment p {
+	font-size: 1.2em;
+}
+
+.alert a {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.alert a:hover {
+	opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+	.background {
+		padding-bottom: 20%;
 	}
 
-	.container1::after {
-		height: 100%;
+	.upper img {
+		width: 100px;
 	}
 
-	.box {
-		width: 65%;
-		transform: translateY(18%);
+	.boxForm {
+		width: 80%;
 	}
 
-	.box h1 {
+	.alert {
+		margin-top: 10px;
+		width: 60%;
+	}
+
+	.payment p {
+		font-size: 1em;
+		width: 70%;
+	}
+
+	.alert a:hover {
+		opacity: 0.5;
+	}
+
+	.btnRegister {
+		width: 60%;
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.boxForm {
+		width: 90%;
+	}
+
+	.boxForm h1 {
 		font-size: 1.5em;
 	}
 
-	.box h2 {
-		font-size: 1.2em;
+	.boxForm h2 {
+		font-size: 1.3em;
 	}
 
-	form label {
-		display: block;
-		font-size: 18px;
+	form {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 0;
 	}
 
 	form input {
-		font-size: 18px;
-	}
-
-	.btn-outline-danger {
-		font-size: 1em;
-	}
-
-	.playersData-grid {
-		display: block;
-	}
-}
-
-@media (max-width: 500px) {
-	.registImg img {
-		width: 120px;
-	}
-
-	.container1 {
-		height: 180vh;
-	}
-
-	.box {
-		width: 80%;
-		transform: translateY(15%);
-	}
-
-	.box h1 {
-		font-size: 1.1em;
-	}
-
-	.box h2 {
-		font-size: 1em;
-	}
-
-	.teamData input {
-		width: 90%;
-	}
-
-	.playersData input {
-		width: 90%;
-	}
-
-	.btn-outline-danger {
 		width: 100%;
+	}
+
+	.formDiv i {
+		top: 46%;
+		right: 3%;
+	}
+
+	.alert {
+		margin-top: 10px;
+		width: 100%;
+		font-size: 0.9em;
+	}
+
+	.payment p {
+		font-size: 1em;
+		width: 100%;
+	}
+
+	.btnRegister {
+		width: 100%;
+		font-size: 0.8em;
 	}
 }

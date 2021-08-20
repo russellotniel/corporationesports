@@ -13,108 +13,120 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 		<link rel="icon" href="../img/logo.png" />
 		<link rel="stylesheet" href="../css/styles.css" />
 		<script src="../js/main.js" defer></script>
 		<title>Scrimage Registration</title>
 	</head>
 	<body>
-		<div class="registImg">
-			<img src="../img/logo.png" alt="" />
-			<img src="../img/pubglogo.png" alt="" />
-		</div>
-		<div class="container1">
-			<div class="box">
+		<div class="background">
+			<div class="upper">
+				<img src="../img/logo.png" alt="" />
+				<img src="../img/pubglogo.png" alt="" />
+			</div>
+
+			<div class="boxForm">
 				<h1>Team Registration</h1>
-				<form name="registrationForm">
+				<form action="index.html" target="_blank" name="registrationForm">
 					<div class="teamData">
 						<h2><span class="heading-underline">Team Data</span></h2>
-						<label for="teamName">Nama Team</label>
-						<input type="text" name="teamName" id="teamName" autofocus required />
 
-						<label for="teamPhoneNumber">No HP Leader</label>
-						<input type="text" name="teamPhoneNumber" id="teamPhoneNumber" required />
+						<div class="formDiv">
+							<label for="teamName">Nama Team</label>
+							<input type="text" name="teamName" id="teamName" autofocus />
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error Message</small>
+						</div>
+
+						<div class="formDiv">
+							<label for="teamPhoneNumber">Whatsapp Perwakilan Team</label>
+							<input type="text" name="teamPhoneNumber" id="teamPhoneNumber" />
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error Message</small>
+						</div>
 					</div>
 
 					<div class="playersData">
 						<h2><span class="heading-underline">Players Data</span></h2>
 						<div class="playersData-grid">
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 1 IGN</label>
-								<input type="text" name="player1IGN" id="player1IGN" required />
+								<input type="text" name="player1IGN" id="player1IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 2 IGN</label>
-								<input type="text" name="player2IGN" id="player2IGN" required />
+								<input type="text" name="player2IGN" id="player2IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 3 IGN</label>
-								<input type="text" name="player3IGN" id="player3IGN" required />
+								<input type="text" name="player3IGN" id="player3IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 4 IGN</label>
-								<input type="text" name="player4IGN" id="player4IGN" required />
+								<input type="text" name="player4IGN" id="player4IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 5 IGN (Optional)</label>
 								<input type="text" name="player5IGN" id="player5IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 
-							<div>
+							<div class="formDiv">
 								<label for="player1Name">Player 6 IGN (Optional)</label>
 								<input type="text" name="player6IGN" id="player6IGN" />
+								<i class="fas fa-check-circle"></i>
+								<i class="fas fa-exclamation-circle"></i>
+								<small>Error Message</small>
 							</div>
 						</div>
 					</div>
-					<div class="alert alert-success alert-dismissible fade show myAlert d-none" role="alert">
-						<strong>Terima kasih!</strong> Tim kalian berhasil diregistrasi.
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
-					<button type="submit" class="btn btn-outline-danger btnRegister">Register</button>
-					<div class="spinner-border d-none loading" role="status">
-						<span class="sr-only"></span>
+
+					<div class="payment" id="payment">
+						<h2 class="heading-underline">Payment</h2>
+						<p>Payment Registrasi: <strong>IDR 20.000</strong> / slot</p>
+						<p>💳 BCA 2880237503 A/N BRYAN J</p>
+						<p>💳 OVO / DANA / GOPAY 081311556518 A/N BRYAN J</p>
+						<div class="alert alert-danger alert-dismissible fade show paymentAlert" role="alert">Silahkan <strong>mengisi data diatas dan melakukan pembayaran terlebih dahulu</strong> sebelum anda mengirim bukti pembayaran.</div>
+						<div class="alert alert-primary alert-dismissible fade show redirectError d-none" role="alert">
+							Jikalau anda sudah mengisi data dan melakukan pembarayan tetapi tidak dialihkan ke page baru atau ingin bertanya kepada admin, klik
+							<a href="https://wa.me/6288212599372?text=Nama%20Tim:%0AIni%20bukti%20pembayarannya%0ATerima%20Kasih!" class="text-underline">disini</a>.
+						</div>
+						<input type="submit" class="btn btn-danger btnRegister" value="Register dan Kirim Bukti Pembayaran" />
+						<div class="spinner-border d-none loading" role="status">
+							<span class="sr-only"></span>
+						</div>
 					</div>
 				</form>
 			</div>
 		</div>
-		<!-- Optional JavaScript; choose one of the two! -->
-
-		<!-- Option 1: Bootstrap Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-		<!-- Option 2: Separate Popper and Bootstrap JS -->
-		<!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-      -->
+		<!-- <script type="text/javascript">
+			window.onbeforeunload = function () {
+				return "Silahkan selesaikan registrasi.";
+			};
+		</script> -->
 	</body>
 </html>
-
-<!-- 📑 REGISTRATION FORM 📑
-THE CORPORATION PRIVATE SCRIM
-———
-1. Nama Team : 
-2. No Telepon WA Leader : 
-3. Sesi (Pilih satu) : 19.30 WIB
-———
-Data Player Nick Game + No ID
-1. Player 1  :
-2. Player 2 :
-3. Player 3 :
-4. Player 4 :
-5. Player 5 :
-6. Player 6 :
-———
-Payment Registrasi : IDR 15.000 / Slot
-———
-Payment:
-💳 BCA 2880237503 A/N BRYAN J
-💳 OVO / DANA / GOPAY 081311556518 A/N BRYAN J
-———
-*KIRIM BUKTI PEMBAYARAN -->
-
-<!-- https://script.google.com/macros/s/AKfycbwE6IxWPlixN4l_deEUEE2vamFTCDfM2npIE_78LqwJf79Dv9H9eXFezJZ_fqvTCI4E/exec -->
