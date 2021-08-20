@@ -215,6 +215,9 @@ function checkIGN(playerIGNValue, playerIGN) {
 	} else if (playerIGNValue.length > 30) {
 		setErrorFor(playerIGN, "IGN tidak boleh lebih dari 30 characters.");
 		return false;
+	} else if (playerIGNValue.length < 3) {
+		setErrorFor(playerIGN, "IGN tidak boleh kurang dari 3 characters.");
+		return false;
 	}
 	return true;
 }
@@ -224,6 +227,9 @@ function checkSecondaryIGN(playerIGNValue, playerIGN) {
 		setErrorFor(playerIGN, "IGN tidak boleh lebih dari 30 characters.");
 		return false;
 	} else if (playerIGNValue === "") {
+		return false;
+	} else if (playerIGNValue.length < 3) {
+		setErrorFor(playerIGN, "IGN tidak boleh kurang dari 3 characters.");
 		return false;
 	}
 	return true;
