@@ -258,15 +258,19 @@ function checkPhone(teamPhoneNumberValue) {
 		setErrorFor(teamPhoneNumber, "Silahkan isi nomor HP.");
 		return false;
 	} else if (teamPhoneNumberValue.startsWith("08", 0)) {
-		if (teamPhoneNumberValue.length < 10 || teamPhoneNumberValue.length > 12) {
-			setErrorFor(teamPhoneNumber, "Nomor HP harus 10 sampai 12 angka.");
-			return false;
-		} else {
+		let regex = /^(\d{10}|\d{11}|\d{12}|\d{13})$/.test(teamPhoneNumberValue);
+		if (regex) {
 			setSuccessFor(teamPhoneNumber);
 			return true;
+		} else if (teamPhoneNumberValue < 3 || teamPhoneNumberValue > 13) {
+			setErrorFor(teamPhoneNumber, "Nomor HP harus 10 sampai 13 angka.");
+		} else if (!regex) {
+			setErrorFor(teamPhoneNumber, "Silahkan isi nomor HP yang valid.");
+			return false;
 		}
 	} else {
 		setErrorFor(teamPhoneNumber, "Nomor HP harus dimulai dengan '08'.");
+		return false;
 	}
 }
 
