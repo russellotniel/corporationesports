@@ -158,7 +158,6 @@ form.addEventListener("submit", (e) => {
 			let gate4 = false;
 
 			if (duplicates.length !== 0) {
-				alert("duplicates");
 				// Set all to success first
 				for (let i = 0; i < array.length; i++) {
 					setSuccessFor(eval("player" + [i + 1] + "IGN"));
@@ -173,7 +172,6 @@ form.addEventListener("submit", (e) => {
 					}
 				}
 			} else {
-				alert("no duplicates");
 				// If there are no duplicates, set all to success and continue
 				for (let i = 0; i < array.length; i++) {
 					setSuccessFor(eval("player" + [i + 1] + "IGN"));
