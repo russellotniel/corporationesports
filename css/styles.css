@@ -145,7 +145,7 @@ form input {
 }
 
 .payment p {
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 .alert a {
@@ -155,6 +155,20 @@ form input {
 
 .alert a:hover {
 	opacity: 0.5;
+}
+
+.footer {
+	background: rgba(169, 169, 169, 0.3);
+	padding: 1em 0;
+	text-align: center;
+}
+
+.footer a:hover {
+	color: var(--primary-color);
+}
+
+.icons {
+	padding: 0 10px;
 }
 
 @media screen and (max-width: 800px) {

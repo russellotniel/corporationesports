@@ -247,6 +247,9 @@ function checkTeamName(teamNameValue) {
 	if (teamNameValue === "") {
 		setErrorFor(teamName, "Silahkan isi nama tim kalian.");
 		return false;
+	} else if (teamNameValue.length > 50) {
+		setErrorFor(teamName, "Nama Team tidak boleh lebih dari 50 characters.");
+		return false;
 	} else {
 		setSuccessFor(teamName);
 		return true;
